@@ -7,15 +7,19 @@ namespace Blogging.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly FileController _fileController;
+    
+    public HomeController(ILogger<HomeController> logger, FileController fileController)
     {
         _logger = logger;
+        _fileController = fileController;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var okResult = (OkObjectResult)_fileController.GetFiles().Result.Result!;
+        List<MarkdownFile> files = (List<MarkdownFile>) okResult.Value!;
+        return View(files);
     }
 
     public IActionResult Privacy()
