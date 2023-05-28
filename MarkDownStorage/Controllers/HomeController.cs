@@ -7,11 +7,9 @@ namespace Blogging.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly IHttpContextAccessor _httpContext;
 
-    public HomeController(ILogger<HomeController> logger, IHttpContextAccessor httpContext)
+    public HomeController(ILogger<HomeController> logger)
     {
-        _httpContext = httpContext;
         _logger = logger;
     }
 
