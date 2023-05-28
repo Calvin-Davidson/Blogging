@@ -1,5 +1,5 @@
 
-## MarkDownStoraqe
+## MarkDownStorage
 
 Markdown storage is a small project of mine to experiment with .net MVC and EntityFramework.
 
