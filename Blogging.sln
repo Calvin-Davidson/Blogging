@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogging", "Blogging\Blogging.csproj", "{E2CF5FFD-2ADA-4586-A3CB-CC80F798881B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkDownStorage", "MarkDownStorage\MarkDownStorage.csproj", "{E2CF5FFD-2ADA-4586-A3CB-CC80F798881B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

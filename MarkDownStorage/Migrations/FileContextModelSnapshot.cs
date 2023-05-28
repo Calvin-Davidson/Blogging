@@ -17,7 +17,7 @@ namespace Blogging.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
-            modelBuilder.Entity("Blogging.Models.MarkdownFile", b =>
+            modelBuilder.Entity("MarkDownStorage.Models.MarkdownFile", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
