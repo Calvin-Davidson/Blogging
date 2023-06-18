@@ -1,0 +1,14 @@
+﻿<h1>@Title</h1>
+@if (ButtonsFragment != null)
+{
+    @ButtonsFragment
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? ButtonsFragment { get; set; }
+
+    [Parameter] 
+    public string Title { get; set; } = "";
+
+}

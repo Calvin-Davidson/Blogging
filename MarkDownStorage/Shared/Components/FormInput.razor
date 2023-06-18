@@ -1,0 +1,21 @@
+﻿<style>
+    p {
+        margin-bottom: 0;
+    }
+    
+    input {
+        margin-bottom:  1rem;
+    }
+    
+</style>
+
+<p>@DisplayName</p>
+<InputText @bind-Value="@FieldValue"></InputText>
+
+@code {
+    [Parameter]
+    public string DisplayName { get; set; } = "";
+
+    [Parameter]
+    public string FieldValue { get; set; } = "";
+}

@@ -1,0 +1,31 @@
+﻿<style>
+    .title-section {
+        border: black 1px solid;
+    }
+    
+    .content-section {
+        border:  black 1px solid;
+    }
+</style>
+
+@if (TitleContent != null)
+{
+    <div class="title-section">
+        @TitleContent
+    </div>
+}
+
+@if (InputContent != null)
+{
+    <div class="content-section">
+            @InputContent
+    </div>
+}
+
+@code {
+    [Parameter]
+    public RenderFragment? InputContent { get; set; }
+    
+    [Parameter]
+    public RenderFragment? TitleContent { get; set; }
+}
