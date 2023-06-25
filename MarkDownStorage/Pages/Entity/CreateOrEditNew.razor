@@ -1,8 +1,12 @@
 ﻿@page "/CreateOrEditNew"
+@using BlazorApp1.Data
+@using System.Reflection
+@using System.ComponentModel
 
 <FormDemoEditor></FormDemoEditor>
 
+<DisplayNameLabel PropertyName="@nameof(WeatherForecast.Summary)" TargetType="_forecast?.GetType()"></DisplayNameLabel>
 
 @code {
-    
+ WeatherForecast? _forecast;
 }

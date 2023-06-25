@@ -1,0 +1,37 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using BlazorApp1.Data
+@using System.ComponentModel
+
+<h3>@DisplayName</h3>
+
+@code {
+    [Parameter, EditorRequired] public Type? TargetType { get; set; }
+    [Parameter, EditorRequired] public string PropertyName { get; set; } = "";
+
+    private string DisplayName { get; set; } = "Default";
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (TargetType != null && !string.IsNullOrWhiteSpace(PropertyName))
+        {
+            DisplayName = GetDisplayName(TargetType, PropertyName);
+        }
+    }
+
+    private string GetDisplayName(Type targetType, string propertyName)
+    {
+        var property = targetType?.GetProperty(nameof(WeatherForecast.Summary));
+        var displayAttribute = property?.GetCustomAttributes(typeof(DisplayNameAttribute), false)
+            .Cast<DisplayNameAttribute>()
+            .FirstOrDefault();
+
+        if (displayAttribute != null && !string.IsNullOrWhiteSpace(displayAttribute.DisplayName))
+        {
+            return displayAttribute.DisplayName;
+        }
+
+        return propertyName; // Default to property name if DisplayAttribute is not present or does not have a Name
+    }
+}
